@@ -1,7 +1,6 @@
----
 # tasks file for install-commons
-
-name: Install commons for targeted hosts
-tasks:
-  - name: ping host
-  - ping:
+-
+  name: Install commons for targeted hosts
+  tasks:
+    - name: Check host connectivity
+    - ping:
