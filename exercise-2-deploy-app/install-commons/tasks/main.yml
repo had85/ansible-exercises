@@ -1,4 +1,3 @@
 # tasks file for install-commons
-  tasks:
     - name: Check host connectivity
       ping:
