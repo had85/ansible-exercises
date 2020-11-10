@@ -1,4 +1,4 @@
 - name: Prepare host and install specified app
-  hosts: ansible-target3
+  hosts: target3
   roles:
     - install-commons
