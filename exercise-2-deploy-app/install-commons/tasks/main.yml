@@ -1,3 +1,8 @@
 # tasks file for install-commons
     - name: Check host connectivity
       ping:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
