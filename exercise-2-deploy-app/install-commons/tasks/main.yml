@@ -5,3 +5,9 @@
       yum:
         name: ["git", "firewalld"]
         state: present
+        
+    - name: Enable firewalld
+      systemd:
+        name: firewalld
+        started: yes
+        enabled: yes

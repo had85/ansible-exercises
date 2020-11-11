@@ -10,3 +10,19 @@
       file:
         path: /etc/my.cnf
         state: touch
+        
+    - name: Enable MariaDB
+      systemd:
+        name: mariadb
+        started: yes
+        enabled: yes
+    
+    - name: Set MariaDB firewall port
+      ansible.posix.firewalld:
+        zone: public
+        port: 3306/tcp
+        permanent: yes
+        state: enabled
+        
+        
+        
