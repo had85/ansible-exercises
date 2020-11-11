@@ -1,8 +1,10 @@
 # tasks file for install-commons
     - name: Check host connectivity
       ping:
-    - name: Install git
+    - name: Install commons
       yum:
         name: git
         state: present
-        update_cache: yes
+        with_items: 
+          - git
+          - firewalld
