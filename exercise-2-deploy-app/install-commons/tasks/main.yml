@@ -3,6 +3,6 @@
       ping:
     - name: Install git
       yum:
-        name: yum install git
+        name: git
         state: present
         update_cache: yes
