@@ -1,0 +1,12 @@
+---
+# tasks file for install-mariadb
+
+    - name: Install and configure MariaDB
+      yum:
+        name: mariadb-server
+        state: present
+        
+    - name: Create MariaDB config file
+      file:
+        path: /etc/my.cnf
+        state: touch
