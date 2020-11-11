@@ -1,4 +1,4 @@
-- name: Prepare host and install specified app
+- name: Prepare host and install specified apps
   hosts: target3
   roles:
     - install-commons
