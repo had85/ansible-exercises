@@ -40,10 +40,15 @@
           password: ecompassword
           priv: "*.*:ALL"
           state: present
+    
+    - name: copy sql import file
+      file:
+        src: "{{ role_path}}/files/db-load-script.sql"
+        dest: /tmp/db-load-script.sql
           
-    - name: initialize database with data
+    - name: initialize database with sql-import
       community.mysql.mysql_db:
           name: ecomdb
           state: import
-          target: "{{ role_path}}/files/db-load-script.sql"
+          target: /tmp/db-load-script.sql
           
