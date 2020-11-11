@@ -3,7 +3,7 @@
 
     - name: Install and configure MariaDB
       yum:
-        name: mariadb-server
+        name: ["mariadb-server", "python3-PyMySQL"]
         state: present
         
     - name: Create MariaDB config file
