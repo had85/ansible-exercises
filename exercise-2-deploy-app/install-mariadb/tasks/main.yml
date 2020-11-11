@@ -33,7 +33,7 @@
       community.mysql.mysql_db:
           name: ecomdb
           state: present
-          register: database_creation_status
+      register: database_creation_status
           
     - name: create db_user
       community.mysql.mysql_user:
