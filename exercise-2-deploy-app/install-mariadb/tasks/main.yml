@@ -45,5 +45,5 @@
       community.mysql.mysql_db:
           name: ecomdb
           state: import
-          target: db-load-script.sql
+          target: "{{ role_path}}/files/db-load-script.sql"
           
