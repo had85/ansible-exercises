@@ -14,7 +14,7 @@
     - name: Enable MariaDB
       systemd:
         name: mariadb
-        started: yes
+        state: started
         enabled: yes
     
     - name: Set MariaDB firewall port
