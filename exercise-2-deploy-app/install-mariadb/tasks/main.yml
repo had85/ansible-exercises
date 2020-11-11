@@ -18,11 +18,13 @@
         enabled: yes
     
     - name: Set MariaDB firewall port
-      ansible.posix.firewalld:
+      firewalld:
         zone: public
         port: 3306/tcp
         permanent: yes
         state: enabled
         
-        
-        
+    - name: Reload firewalld
+      systemd:
+        name: firewalld
+        state: reloaded
