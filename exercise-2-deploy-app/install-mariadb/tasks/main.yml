@@ -28,3 +28,15 @@
       systemd:
         name: firewalld
         state: reloaded
+        
+    - name: create database
+      community.mysql.mysql_db:
+          name: ecomdb
+          state: present
+          
+    - name: create db_user
+      community.mysql.mysql_user:
+          name: ecomdb
+          password: ecompassword
+          priv: "*.*:ALL"
+          state: present
