@@ -40,3 +40,10 @@
           password: ecompassword
           priv: "*.*:ALL"
           state: present
+          
+    - name: initialize database with data
+      community.mysql.mysql_db:
+          name: ecomdb
+          state: import
+          target: db-load-script.sql
+          
