@@ -2,7 +2,7 @@
     - name: Check host connectivity
       ping:
     - name: Install git
-      apt:
-        name: git
+      yum:
+        name: yum install git
         state: present
         update_cache: yes
