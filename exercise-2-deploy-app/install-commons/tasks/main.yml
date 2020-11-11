@@ -3,7 +3,7 @@
       ping:
     - name: Install commons
       yum:
-        name: git
+        name: "{{item}}"
         state: present
         with_items: 
           - git
