@@ -33,6 +33,7 @@
       community.mysql.mysql_db:
           name: ecomdb
           state: present
+          register: database_creation_status
           
     - name: create db_user
       community.mysql.mysql_user:
@@ -45,10 +46,12 @@
       copy:
         src: "{{ role_path }}/files/db-load-script.sql"
         dest: /tmp/db-load-script.sql
+      when: database_creation_status.changed
           
     - name: initialize database with sql-import
       community.mysql.mysql_db:
           name: ecomdb
           state: import
           target: /tmp/db-load-script.sql
+      when: database_creation_status.changed
           
