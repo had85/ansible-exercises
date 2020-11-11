@@ -1,4 +1,6 @@
 - name: Prepare host and install specified apps
   hosts: target3
+  become: yes
+  become_method: enable
   roles:
     - install-commons
