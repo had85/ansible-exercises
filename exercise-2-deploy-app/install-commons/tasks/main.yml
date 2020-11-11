@@ -3,8 +3,5 @@
       ping:
     - name: Install commons
       yum:
-        name: "{{item}}"
+        name: ["git", "firewalld"]
         state: present
-      with_items: 
-          - git
-          - firewalld
