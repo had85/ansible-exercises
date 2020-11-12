@@ -20,6 +20,6 @@
     - name: Replace index.html to index.php
       replace:
         path: /etc/httpd/conf/httpd.conf
-        before: DirectoryIndex index.html
-        after: DirectoryIndex index.php
-        regexp: "*DirectoryIndex index.html"
+        before: "DirectoryIndex index.html"
+        after: "DirectoryIndex index.php"
+        regexp: ".*DirectoryIndex index.html"
