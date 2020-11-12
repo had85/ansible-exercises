@@ -36,12 +36,13 @@
       register: database_creation_status
           
     - name: create db_user
-      community.mysql.mysql_user:
-          name: ecomdb
-          password: ecompassword
-          priv: "*.*:ALL"
-          state: present
-          login_unix_socket: /var/run/mysqld/mysqld.sock
+      community.mysql.mysql_query:
+          login_db: ecomdb
+          query: 
+            - UPDATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword'
+            - GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost'
+            - FLUSH PRIVILEGES
+      when: database_creation_status == 'false'
     
     - name: copy sql import file
       copy:
