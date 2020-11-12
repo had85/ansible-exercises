@@ -1,10 +1,10 @@
 ---
 # tasks file for install-apache
-    - name: Check host connectivity
+    - name: Install apache and php
       ping:
     - name: Install commons
       yum:
-        name: ["hppd", "php", "php-mysqlnd"]
+        name: ["httpd", "php", "php-mysqlnd"]
         state: present
         
     - name: Set Apache firewall port
