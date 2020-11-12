@@ -37,10 +37,12 @@
           
     - name: create db_user
       community.mysql.mysql_user:
-          name: ecomdb
-          password: ecompassword
+          name: 'ecomdb'
+          password: 'ecompassword'
           priv: '*.*:ALL,GRANT'
-          host: localhost
+          host: 'localhost'
+          encrypted: no
+          update_password: always
           state: present
     
     - name: copy sql import file
