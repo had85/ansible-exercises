@@ -39,7 +39,7 @@
       community.mysql.mysql_query:
           login_db: ecomdb
           query: 
-            - CREATE USER OF IF NOT EXISTS 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword'
+            - CREATE USER IF NOT EXISTS 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword'
             - ALTER USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword'; 
             - GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost'
             - FLUSH PRIVILEGES
