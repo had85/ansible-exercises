@@ -4,3 +4,4 @@
   roles:
     - install-commons
     - install-mariadb
+    - install-apache
