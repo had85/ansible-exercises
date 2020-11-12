@@ -4,6 +4,7 @@
     - name: Clone a a Kodecloud project to destination
       git:
         repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
+        force: yes
         dest: /var/www/html/
         
     - name: Replace db ip in index.php
