@@ -1,8 +1,6 @@
 ---
 # tasks file for install-apache
     - name: Install apache and php
-      ping:
-    - name: Install commons
       yum:
         name: ["httpd", "php", "php-mysqlnd"]
         state: present
@@ -18,3 +16,10 @@
       systemd:
         name: firewalld
         state: reloaded
+        
+    - name: Replace index.html to index.php
+      replace:
+        path: /etc/httpd/conf/httpd.conf
+        before: DirectoryIndex index.html
+        after: DirectoryIndex index.php
+        regexp: "*DirectoryIndex index.html"
