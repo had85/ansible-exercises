@@ -39,10 +39,10 @@
       community.mysql.mysql_query:
           login_db: ecomdb
           query: 
+            - CREATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword'
             - UPDATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword'
             - GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost'
             - FLUSH PRIVILEGES
-      when: database_creation_status == 'false'
     
     - name: copy sql import file
       copy:
