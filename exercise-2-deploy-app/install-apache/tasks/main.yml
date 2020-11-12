@@ -22,3 +22,14 @@
         path: /etc/httpd/conf/httpd.conf
         replace: "DirectoryIndex index.php"
         regexp: ".*DirectoryIndex index.html"
+        
+    - name: Start Apache
+      systemd:
+        name: httpd
+        state: started
+        enabled: yes
+        
+    - name: Clone a a Kodecloud project to destination
+      git:
+        repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
+        dest: /var/www/html/
