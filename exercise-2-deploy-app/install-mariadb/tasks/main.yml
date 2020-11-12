@@ -39,7 +39,7 @@
       community.mysql.mysql_user:
           name: ecomdb
           password: ecompassword
-          priv: "*.*:ALL"
+          priv: '*.*:ALL,GRANT'
           state: present
     
     - name: copy sql import file
