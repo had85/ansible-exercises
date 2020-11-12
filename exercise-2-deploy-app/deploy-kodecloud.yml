@@ -1,5 +1,5 @@
 - name: Prepare host and install specified apps
-  hosts: target3
+  hosts: target4
   become: yes
   roles:
     - install-commons
