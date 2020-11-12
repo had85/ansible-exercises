@@ -5,3 +5,4 @@
     - install-commons
     - install-mariadb
     - install-apache
+    - clone-and-configure-site

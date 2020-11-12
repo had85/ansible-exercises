@@ -1,0 +1,13 @@
+---
+# tasks file for clone-and-configure-site
+        
+    - name: Clone a a Kodecloud project to destination
+      git:
+        repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
+        dest: /var/www/html/
+        
+    - name: Replace db ip in index.php
+      replace:
+        path: /var/www/html/index.php
+        replace: "mysqli_connect('localhost', 'ecomuser', 'ecompassword', 'ecomdb')"
+        regexp: ".*mysqli_connect('172.20.1.101', 'ecomuser', 'ecompassword', 'ecomdb')"
