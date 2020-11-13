@@ -5,4 +5,10 @@ target4 ansible_host=192.168.182.15 ansible_ssh_pass=osboxes.org
 target5 ansible_host=192.168.182.15 ansible_ssh_pass=osboxes.org
 
 all:
- ansible_sudo_pass=osboxes.org
+	hosts:
+		- target1
+		- target2
+		- target3
+		- target4
+		- target5
+ 	ansible_sudo_pass=osboxes.org
