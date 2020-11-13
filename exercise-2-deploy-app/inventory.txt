@@ -3,6 +3,7 @@ target2 ansible_host=192.168.182.31 ansible_ssh_pass=osboxes.org
 target3 ansible_host=192.168.182.43 ansible_ssh_pass=osboxes.org
 target4 ansible_host=192.168.182.15 ansible_ssh_pass=osboxes.org
 target5 ansible_host=192.168.182.15 ansible_ssh_pass=osboxes.org
+target6 ansible_host=192.168.182.38 ansible_ssh_pass=osboxes.org
 
 [all]
 target1
@@ -14,8 +15,9 @@ target5
 [all:vars]
 ansible_sudo_pass=osboxes.org
 
-[ansible-target-5]
+[kodecloud-targets]
 target5
+target6
 
-[ansible-target-5:vars]
+[kodecloud-targets:vars]
 ansible_sudo_pass=osboxes.org

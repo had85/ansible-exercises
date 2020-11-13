@@ -1,5 +1,5 @@
 - name: Prepare host and install specified apps
-  hosts: ansible-target-5
+  hosts: kodecloud-targets
   become: true
   roles:
     - install-commons
