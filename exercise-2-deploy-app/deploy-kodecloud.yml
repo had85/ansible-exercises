@@ -1,6 +1,6 @@
 - name: Prepare host and install specified apps
   hosts: target4
-  become: yes
+  become: true
   roles:
     - install-commons
     - install-mariadb
